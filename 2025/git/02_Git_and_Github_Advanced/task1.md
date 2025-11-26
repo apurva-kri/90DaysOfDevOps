@@ -1,7 +1,21 @@
 # Task1
 ## TWS Github Advanced
-*This is my pull request code* 
+*Fork a repository and clone it locally*
 
-git pull origin feature-branch
+git clone <https://github.com/apurva-kri/90DaysOfDevOps.git>
 
-**github**
+cd <90DaysOfDevOps>
+
+*Create a feature branch and make changes*
+
+git checkout -b feature-branch
+
+echo "New Feature" >> feature.txt
+
+git add .
+
+git commit -m "Added a new feature"
+
+*Push the changes and create a Pull Request*
+
+git push origin feature-branch
