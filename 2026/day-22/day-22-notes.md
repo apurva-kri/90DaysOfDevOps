@@ -16,6 +16,7 @@
 4. Explore the hidden `.git/` directory — look at what's inside
 
 ![git](https://github.com/srdangat/90DaysOfDevOps/blob/master/2026/day-22/git21.png)
+<img width="706" height="58" alt="Screenshot 2026-03-11 061430" src="https://github.com/user-attachments/assets/3b996404-8f1f-46ed-9055-d94a0322d08e" />
 
 ---
 
