@@ -14,8 +14,6 @@ RUN npm install
 FROM node:18-alpine
 
 WORKDIR /app
-
-
 #It allows us to copy only the required built artifacts and 
 #dependencies from the build stage into a lightweight production image, reducing size and improving security.
 COPY --from=builder /app /app 
