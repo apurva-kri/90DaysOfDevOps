@@ -1,0 +1,43 @@
+services:
+  db:
+    image: mysql:8
+    environment: 
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      
+    networks:
+      - docker_project_net
+    volumes:
+      - docker_project_vol:/var/lib/mysql
+    healthcheck:
+     test: ["CMD","mysqladmin", "ping", "-h", "localhost","-uroot","-ptest@123"]
+     interval: 30s
+     timeout: 5s
+     retries: 5
+  
+  flask:
+    build: .
+    image: myflask-app
+    networks:
+      - docker_project_net
+    ports:
+      - "5000:5000"
+    environment:
+      - MYSQL_DB=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER} 
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=${MYSQL_HOST}
+
+    depends_on:
+      db:
+       condition: service_healthy
+    
+volumes:
+  docker_project_vol:
+
+networks:
+  docker_project_net:
+
+
+
+
