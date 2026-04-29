@@ -1,0 +1,23 @@
+server:
+  name: my-server
+  ip: 0.0.0.0
+  port: 8000:8000
+
+database:
+  host: db 
+  name: my-database
+  credentials:
+    user: apurva
+    password: test@123
+
+startup_script_block: |
+  #!/bin/bash
+  echo "ststing server..."
+  cd /app
+  npm install
+  npm start
+
+startup_script_fold: >
+  This script connects to the database,
+  runs migration,
+  and start the migration server.
