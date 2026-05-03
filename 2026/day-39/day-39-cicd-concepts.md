@@ -40,7 +40,26 @@ Draw a CI/CD pipeline for this scenario:
 > A developer pushes code to GitHub. The app is tested, built into a Docker image, and deployed to a staging server.
 
 Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
-[Image]
+```
+[ Developer Push ]
+        ↓
+[ Build Stage ]
+- Install dependencies
+- Build app
+
+        ↓
+[ Test Stage ]
+- Run unit tests
+- Run lint checks
+
+        ↓
+[ Docker Build ]
+- Create Docker image
+
+        ↓
+[ Deploy Stage ]
+- Deploy to staging server
+```
 
 ### Task 5: Explore in the Wild
 1. Open any popular open-source repo on GitHub (Kubernetes, React, FastAPI — pick one you know)
