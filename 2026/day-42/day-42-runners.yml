@@ -1,0 +1,55 @@
+name: self_hosted
+
+on:
+    push:
+      branches: [main]
+
+jobs:
+    detail1:
+        runs-on: [self-hosted, my-linux-runner]
+        steps:
+            - name: print OS name
+              run: uname -a
+
+            - name: print host name
+              run: echo "hostname:$(hostname)"
+
+            - name: print current user
+              run: echo "current_user:$(whoami)"
+
+            - name: check docker versions
+              run: docker --version
+              #continue-on-error: true
+
+            - name: check python versions 
+              run: python --version
+              #continue-on-error: true
+
+            - name: check node version
+              run: node --version
+              #continue-on-error: true
+
+            - name: check git version
+              run: git --version
+    detail2:
+        runs-on: windows-latest
+        steps:
+            - name: print OS name
+              run: uname -a
+
+            - name: print host name
+              run: echo "hostname:$(hostname)"
+
+            - name: print current user
+              run: echo "current_user:$(whoami)"
+    detail3:
+        runs-on: macos-latest
+        steps:
+            - name: print OS name
+              run: uname -a
+
+            - name: print host name
+              run: echo "hostname:$(hostname)"
+
+            - name: print current user
+              run: echo "current_user:$(whoami)"
